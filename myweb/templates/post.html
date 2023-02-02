@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+        background-image:url(/static/images/lycoris.jpg);
+        background-size:cover;
+        }
+
+        #main {
+            width: 60%;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .one {
+            border: 1px solid violet;
+            border-radius: 2em;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 120px;
+            background-color: rgba(240, 248, 255, 0.4);
+        }
+
+        .one:hover {
+            opacity: 1;
+            background-color: antiquewhite;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #tou {
+            position: absolute;
+            top: -8%;
+            left: -10%;
+            border:1px solid violet;
+            border-radius:2em;
+        }
+        a{
+        text-decoration:none;
+        color:crimson;
+        margin-top:20px;
+        margin-left:30px;
+        }
+        a:hover{
+        color:violet;
+        font-size:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">主页</a>
+    <div id="main">
+        {% for post in post_list %}
+        <div class="one">
+            <h3 align="center">{{post.title}}</h3>
+            <hr>
+            <p>{{post.passage}}</p>
+            <img src="{{post.image.url}}" alt="tou" id="tou">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user_client.user.username}}的博客</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <style>
+    body {
+            background-image: url(/static/images/八六一.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 50% 110%;
+            background-position: 50%;
+        }
+
+         #bar7 #search {
+             width: 250px;
+             border-radius: 42px;
+             border: 2px solid #324B4E;
+             background: #F9F0DA;
+             transition: .3s linear;
+             float: right;
+         }
+         #bar7 #search:focus {
+             width: 300px;
+        }
+
+
+</style>
+</head>
+
+<body>
+
+
+    <div id="top">
+        <div class="top1">
+            <ul>
+                <li><a href="/" target="_self">主页</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="{{user_client.img.url}}" alt="logo" title="logo" id="tou" width="60" height="70">
+        </div>
+        <div class="top2">
+            <ul>
+                <li><a href="/upload"
+                        target="_self">写博客</a></li>
+                <li><a href="/settings"
+                        target="_self">个人设置</a></li>
+                <li><a href="/logout"
+                        target="_self">登出</a></li>
+                <li><a href="">
+                        {{user_client.location}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div id="left">
+            {% for post in post_lists%}
+            <div class="comment">
+            <img src="{{post.image.url}}" alt="图片" width="50" height="65">
+            <a href="" class="name">{{post.title}}</a>
+            <p>{{post.passage}}</p>
+            <span>{{post.created_at|date:"Y-m-d"}}</span>
+            <a class='good' href="/preedit/{{post.pk}}"
+                    target = "_self">编辑</a>
+                <a class="delete" href="/delete/{{post.pk}}" target="_self">删除</a>
+             </div>
+            {% endfor %}
+        </div>
+<!--            <div class='comment'>-->
+<!--                <img src='/static/images/八六.png' alt='八六' />-->
+<!--                <a class="name" href="#"-->
+<!--                    target="_blank">八六</a>-->
+<!--                <p>即将到站了，双铁少爷</p>-->
+<!--                <span>2022/12/21</span>-->
+<!--                <a class='good' href="#"-->
+<!--                    target="_blank">赞</a>-->
+<!--            </div>-->
+
+<!--            <div class='comment'>-->
+<!--                <img src='波莱特.png' alt='雏衣波莱特' />-->
+<!--                <a class="name"-->
+<!--                    href="#"-->
+<!--                    target="_blank">波莱特</a>-->
+<!--                <p>双铁君，终于要到了呢-->
+<!--                </p>-->
+<!--                <span>2022/12/21</span>-->
+<!--                <a class='good' href="#"-->
+<!--                    target="_blank">赞</a>-->
+
+
+
+
+        <div id="right">
+            <div class="rtop">
+                <p><a href="#">谁看过我</a></p>
+            </div>
+            <div class="rmiddle">
+<!--                <div><a href="#"-->
+<!--                        target="_blank">铃奈</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">深美</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">真闇姐</a></div>-->
+<!--                <p>&nbsp;</p>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">凪</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">日日姬</a></div>-->
+
+<!--                <div><a href="#"-->
+<!--                        target="_blank">稀咲</a></div>-->
+                {% for i in all_client %}
+                <div>
+                    <a href="/client/{{i.id_user}}" target="_self">
+                        <img src="{{i.img.url}}"
+                         alt="头像" id="client" height="70" width="60">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="rfoot" id="bar7">
+                <form action="search" method="post">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td><input type="search" id="search" name="title" required></td>
+                            <td><input type="submit" value="搜索"></td>
+                        </tr>
+                    </table>
+                </form>
+               <span><p>{{error_message}}</p></span>
+            </div>
+        </div>
+    </div>
+<!--    <div class="footer">-->
+<!--        <div class='comment'>-->
+<!--            <img src="/static/images/铁子.png" alt="头像" id="head">-->
+<!--            <a class="name"-->
+<!--                href="#"-->
+<!--                target="_blank">我</a>-->
+<!--            <p><textarea name="say" id="say"></textarea></p>-->
+<!--            <span class="clock"></span>-->
+<!--            <button class="an">发布</button>-->
+
+<!--        </div>-->
+<!--    </div>-->
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

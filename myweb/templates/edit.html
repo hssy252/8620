@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{post_now.title}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(/static/images/诗寇蒂.jpg);
+            background-size: cover;
+        }
+
+        #main {
+            margin: 0 auto;
+            margin-top: 60px;
+            width: 700px;
+            height: 300px;
+        }
+
+        #one {
+            margin: 0 auto;
+            border: 1px dashed;
+            border-radius: 1em;
+            background-color: rgba(240, 248, 255, 0.4);
+            width: 600px;
+        }
+
+        .top {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        input:focus {
+            background-color: cyan;
+        }
+
+        textarea {
+            width: 80%;
+            height: 200px;
+            outline: none;
+            resize: none;
+            border: 1px dashed;
+            border-radius: 1em;
+            background-color: rgba(240, 248, 255, 0.4);
+        }
+
+        .middle {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .foot {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .bottom {
+            margin: 0 auto;
+        }
+
+        button {
+            margin: 0 auto;
+            width: 40px;
+            height: 30px;
+            display: block;
+        }
+
+        input {
+            border: 1px dashed;
+        }
+        .img{
+        width:60px;
+        height:60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="one">
+            <form action="/edit/{{post_now.id}}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="top">
+                    <input type="text" value="{{post_now.title}}" name="title">
+                </div>
+                <div class="middle">
+                    <textarea name="passage" cols="30" rows="10">{{post_now.passage}}</textarea>
+                </div>
+                <div class="foot">
+                    <img src="{{post_now.image.url}}" alt="图片" class="img">
+                    <input type="file" name="image">
+                </div>
+                <div class="bottom">
+                    <button type="submit">修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

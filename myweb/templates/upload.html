@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(/static/images/无职转生.jpg);
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+
+        #main {
+            margin: 0 auto;
+            margin-top: 60px;
+            width: 700px;
+            height: 300px;
+        }
+
+        #one {
+            margin: 0 auto;
+            border: 1px dashed;
+            border-radius: 1em;
+            background-color: rgba(240, 248, 255, 0.4);
+            width: 600px;
+        }
+
+       #one:hover{
+       opacity:1;
+       background-color:#FFFFCC;
+       }
+
+        .top {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        input:focus {
+            background-color: cyan;
+        }
+
+        textarea {
+            width: 80%;
+            height: 200px;
+            outline: none;
+            resize: none;
+            border: 1px dashed;
+            border-radius: 1em;
+            background-color: rgba(240, 248, 255, 0.4);
+        }
+
+        .middle {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .foot {
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .bottom {
+            margin: 0 auto;
+        }
+
+        button {
+            margin: 0 auto;
+            width: 40px;
+            height: 30px;
+            display: block;
+        }
+
+        input {
+            border: 1px dashed;
+        }
+        .img{
+        width:60px;
+        height:60px;
+        }
+        a{
+        margin-left:26px;
+        margin-top:30px;
+        color:crimson;
+        }
+        a:link{
+        text-decoration:none;
+        font-size:30px;
+        }
+        a:hover{
+        font-size:40px;
+        color:violet;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">主页</a>
+    <div id="main">
+        <div id="one">
+            <h2 align="center">帖子</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="top">
+                    <input type="text" placeholder="标题" name="title">
+                </div>
+                <div class="middle">
+                    <textarea name="passage" cols="30" rows="10" placeholder="内容"></textarea>
+                </div>
+                <div class="foot">
+                    <img src="" alt="图片" class="img">
+                    <input type="file" name="image">
+                </div>
+                <div class="bottom">
+                    <button type="submit">发布</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

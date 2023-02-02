@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>{{user_client.user.username}}的博客</title>
+    <style>
+    body {
+            background-image: url(/static/images/八六一.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 50% 110%;
+            background-position: 50%;
+
+        }</style>
+</head>
+
+<body>
+
+
+    <div id="top">
+        <div class="top1">
+            <ul>
+                <li><a href="/signin" target="_self">主页</a></li>
+            </ul>
+        </div>
+<!--        <div class="logo">-->
+<!--            <img src="/static/images/logo.png" alt="logo" title="logo">-->
+<!--        </div>-->
+<!--        <div class="top2">-->
+<!--            <ul>-->
+<!--                <li><a href="upload.html.html"-->
+<!--                        target="_blank">写博客</a></li>-->
+<!--                <li><a href="settings.html"-->
+<!--                        target="_blank">个人设置</a></li>-->
+<!--                <li><a href="logout.html"-->
+<!--                        target="_blank">登出</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+    </div>
+    <div id="main">
+        <div id="left">
+            {% for i in user_posts%}
+            <div class="comment">
+            <img src="{{i.image.url}}" alt="图片"  width="60" height="65">
+            <a href="#" class="name">{{i.title}}</a>
+                <hr>
+            <p>{{i.passage}}</p>
+            <span>{{i.created_at|date:"Y-m-d"}}</span>
+<!--            <a class='good' href="#"&ndash;&gt;-->
+<!--                    target="_blank">赞</a>-->
+
+            </div>
+            {% endfor %}
+        </div>
+<!--            <div class='comment'>-->
+<!--                <img src='/static/images/八六.png' alt='八六' />-->
+<!--                <a class="name" href="#"-->
+<!--                    target="_blank">八六</a>-->
+<!--                <p>即将到站了，双铁少爷</p>-->
+<!--                <span>2022/12/21</span>-->
+<!--                <a class='good' href="#"-->
+<!--                    target="_blank">赞</a>-->
+<!--            </div>-->
+
+<!--            <div class='comment'>-->
+<!--                <img src='波莱特.png' alt='雏衣波莱特' />-->
+<!--                <a class="name"-->
+<!--                    href="#"-->
+<!--                    target="_blank">波莱特</a>-->
+<!--                <p>双铁君，终于要到了呢-->
+<!--                </p>-->
+<!--                <span>2022/12/21</span>-->
+<!--                <a class='good' href="#"-->
+<!--                    target="_blank">赞</a>-->
+
+
+
+
+<!--        <div id="right">-->
+<!--            <div class="rtop">-->
+<!--                <p><a href="#">谁看过我</a></p>-->
+<!--            </div>-->
+<!--            <div class="rmiddle">-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">铃奈</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">深美</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">真闇姐</a></div>-->
+<!--                <p>&nbsp;</p>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">凪</a></div>-->
+<!--                <div><a href="#"-->
+<!--                        target="_blank">日日姬</a></div>-->
+
+<!--                <div><a href="#"-->
+<!--                        target="_blank">稀咲</a></div>-->
+<!--                {% for i in all_client %}-->
+<!--                <div><a href="client.html" target="_self"></a></div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--            <div class="rfoot">-->
+<!--                <i class="btn">x</i>-->
+<!--                <img src="/static/images/20221222173250.png" alt="二维码" id="qr">-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+<!--    <div class="footer">-->
+<!--        <div class='comment'>-->
+<!--            <img src="/static/images/铁子.png" alt="头像" id="head">-->
+<!--            <a class="name"-->
+<!--                href="#"-->
+<!--                target="_blank">我</a>-->
+<!--            <p><textarea name="say" id="say"></textarea></p>-->
+<!--            <span class="clock"></span>-->
+<!--            <button class="an">发布</button>-->
+
+<!--        </div>-->
+<!--    </div>-->
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

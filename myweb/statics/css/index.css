@@ -1,0 +1,254 @@
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        li {
+            list-style: none;
+        }
+
+        .top1 {
+            float: left;
+            width: 10%;
+            height: 60px;
+        }
+
+        .top1 ul li {
+            float: left;
+        }
+
+        .top1 a {
+            margin-left: 30px;
+            font-size: 20px;
+            text-decoration: none;
+            color: violet;
+        }
+
+        .top1 a:hover {
+            color: violet;
+            font-size: 22px;
+        }
+
+        .logo {
+            float: left;
+            width: 20%;
+            margin-left: 50px;
+        }
+
+        .top2 {
+            width: 60%;
+            float: right;
+        }
+
+        .top2 ul li {
+            float: right;
+            margin-right: 50px;
+        }
+
+        .top2 ul li a {
+            font-size: 20px;
+            text-decoration: none;
+            font-style: italic;
+            color: grey;
+        }
+
+        .top2 ul li a:hover {
+            color: violet;
+            font-size: 30px;
+        }
+
+        #top {
+            height: 100px;
+            position: relative;
+        }
+
+        #main {
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 1em;
+            font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+        }
+
+        #left {
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+
+
+        .comment {
+            margin-top: 4%;
+            margin-left: 14%;
+            padding: 2%;
+            width: 70%;
+            background-color: rgba(240, 248, 255, 0.4);
+            border: 1px dashed;
+            border-radius: 1em;
+            position: relative;
+        }
+
+        .comment:hover {
+            background-color:rgba(157, 202, 211, 0.857);
+            opacity:1;
+
+        }
+
+        .comment:hover img {
+            border-radius: 1em;
+        }
+
+        .comment img {
+            position: absolute;
+            top: -1%;
+            left: -10%;
+            border-radius: 2em;
+            border: 2px solid #888;
+        }
+
+        .comment post_img{
+            position: absolute;
+            border-radius:2em;
+            border: 2px solid #888;
+            bottom: 10%;
+        }
+
+        .comment p {
+            text-indent: 2em;
+            margin-top: 0.4%;
+        }
+
+        .comment .name {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .comment .name:hover {
+            text-decoration: underline;
+        }
+
+        .comment span {
+            position: absolute;
+            top: 10%;
+            right: 4%;
+            font-size: 0.9em;
+            font-weight: none;
+            color: #444
+        }
+
+        .comment .good {
+            color: crimson;
+            text-decoration: none;
+            position: absolute;
+            bottom: 4%;
+            right: 8%;
+        }
+        .comment .delete{
+            color: grey;
+            text-decoration: none;
+            position: absolute;
+            bottom: 4%;
+            right: 20%;
+        }
+
+        #right {
+            width: 30%;
+            height: 100%;
+            float: right;
+            border-radius: 1em;
+            position: relative;
+        }
+
+        .rtop p {
+            text-align: center;
+        }
+
+        .rtop a {
+            text-decoration: none;
+            color: rgb(128, 128, 128);
+        }
+
+        .rmiddle div {
+            color: violet;
+            float: left;
+            margin-left: 60px;
+        }
+
+        .rmiddle div a {
+            text-decoration: none;
+        }
+
+        .rmiddle div a:hover {
+            font-size: 20px;
+        }
+
+        .rmiddle p {
+            clear: both;
+        }
+
+        .rfoot {
+            position: absolute;
+            bottom: 60px;
+            right: 100px;
+        }
+
+        .btn {
+            position: absolute;
+            top: -1px;
+            left: -14px;
+            border: 2px solid #ccc;
+            height: 16px;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10%;
+            width: 90%;
+            height: 100px;
+        }
+
+        #id {
+            position: absolute;
+            left: -10px;
+            top: -2px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 40px;
+            outline: none;
+            resize: none;
+            border: 1 violet dashed;
+        }
+
+        button {
+            position: absolute;
+            right: 10%;
+        }
+
+        #say {
+            font-weight: bold;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #tou:hover{
+        border:1px solid violet;
+        border-radius:2em;
+        }
+
+        #tou{
+        border:1em;
+        border-radius:2em;
+        }
+        #client:hover{
+        border:1em;
+        border-radius:2em;
+        }
+
+    </style>
